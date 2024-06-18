@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "booking_user",
+    "password": "your_password",
+    "database": "booking_travel_dev",
+    "host": "booking-travel-prod-instance-1.c96auc6w6f3u.us-east-1.rds.amazonaws.com",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "booking_user",
+    "password": "your_password",
+    "database": "booking_travel_test",
+    "host": "booking-travel-prod-instance-1.c96auc6w6f3u.us-east-1.rds.amazonaws.com",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "booking_user",
+    "password": "your_password",
+    "database": "booking_travel_prod",
+    "host": "booking-travel-prod-instance-1.c96auc6w6f3u.us-east-1.rds.amazonaws.com",
+    "dialect": "postgres"
+  }
+}

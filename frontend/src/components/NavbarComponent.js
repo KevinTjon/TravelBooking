@@ -1,13 +1,13 @@
 import React from 'react';
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const NavbarComponent = () => {
   return (
     <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
       <Container>
-        <Navbar.Brand as={Link} to="/">Travel Booking App</Navbar.Brand> {/* Use Link from react-router-dom */}
+        <Navbar.Brand as={Link} to="/">Travel Booking App</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -21,6 +21,11 @@ const NavbarComponent = () => {
               <NavDropdown.Divider />
               <NavDropdown.Item as={Link} to="/admin">Admin Dashboard</NavDropdown.Item>
             </NavDropdown>
+          </Nav>
+          <Nav>
+            <Nav.Link as={Link} to="/login" className="btn btn-outline-light me-2">
+              Login
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

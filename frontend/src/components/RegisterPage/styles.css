@@ -1,0 +1,37 @@
+/* src/components/RegisterPage/styles.css */
+.register-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .register-container {
+    width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  .register-container h2 {
+    color: #333;
+  }
+  
+  .register-container form {
+    margin-top: 20px;
+  }
+  
+  .register-container p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .register-container a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  

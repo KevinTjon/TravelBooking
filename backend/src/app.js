@@ -1,28 +1,19 @@
 const express = require('express');
 const app = express();
-const db = require('./models');
+const userRoutes = require('./routes/userRoutes');
 
 // Sync database
-db.sequelize.sync().then(() => {
-  console.log('Database synced');
-}).catch(err => {
-  console.error('Error syncing database:', err);
-});
+const db = require('./models'); // Make sure this path is correct
 
-app.use(express.json());
+db.sequelize.sync()
+  .then(() => {
+    console.log('Database synced successfully.');
+  })
+  .catch((error) => {
+    console.error('Error syncing database:', error);
+  });
 
-// Define routes
-app.get('/users', async (req, res) => {
-  const users = await db.User.findAll();
-  res.json(users);
-});
+// Mount routes
+app.use('/api/users', userRoutes);
 
-app.post('/users', async (req, res) => {
-  const user = await db.User.create(req.body);
-  res.json(user);
-});
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+module.exports = app;

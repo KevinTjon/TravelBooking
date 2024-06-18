@@ -1,10 +1,14 @@
-// backend/src/routes/index.js
+const Sequelize = require('sequelize');
+const sequelize = require('../config/database');
 
-const express = require('express');
-const router = express.Router();
+const db = {};
 
-router.get('/example', (req, res) => {
-  res.send('Example Route');
-});
+db.Sequelize = Sequelize;
+db.sequelize = sequelize;
 
-module.exports = router;
+// Import models
+db.User = require('./user')(sequelize, Sequelize); // Assuming user.js exports a function that initializes the model
+
+// Add more models if needed
+
+module.exports = db;
